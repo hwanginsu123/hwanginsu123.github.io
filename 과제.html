@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            // 이름을 출력하는 함수 --------------------------------------------------------------------------------------
+            function myFunction() 
+            {
+                // id = "input_1" 입력 필드를 가져 옴.
+                let x = document.getElementById("input_1").value;
+                
+                let text = x + " 고객님 감사합니다.";
+                
+                document.getElementById("demo").innerHTML = text;
+            }
+
+            // 티켓 개수를 출력하는 함수 ------------------------------------------------------------------------------------------
+            function option1() 
+            {
+                if (document.querySelector("select[name=ChildEnterence] option:checked").value == 0)
+                {
+                    return false;
+                }
+                else 
+                {
+                a = document.querySelector("select[name=ChildEnterence] option:checked").text;
+                text1 = "어린이 입장권 " + a + " 매";
+                document.getElementById("demo1").innerHTML = text1;
+                }
+            }
+
+            function option2() 
+            {
+                if (document.querySelector("select[name=AdultEnterence] option:checked").value == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                a = document.querySelector("select[name=AdultEnterence] option:checked").text;
+                text1 = "어른 입장권 " + a + " 매";
+                document.getElementById("demo2").innerHTML = text1;
+                }
+            }
+
+            function option3() 
+            {
+                if (document.querySelector("select[name=ChildBIG3] option:checked").value == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                a = document.querySelector("select[name=ChildBIG3] option:checked").text;
+                text1 = "어린이 BIG3  " + a + " 매";
+                document.getElementById("demo3").innerHTML = text1;
+                }
+            }
+
+            function option4() 
+            {
+                if (document.querySelector("select[name=AdultBIG3] option:checked").value == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                a = document.querySelector("select[name=AdultBIG3] option:checked").text;
+                text1 = "어른 BIG3  " + a + " 매";
+                document.getElementById("demo4").innerHTML = text1;
+                }
+            }
+
+            function option5() 
+            {
+                if (document.querySelector("select[name=ChildFreeTicket] option:checked").value == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                a = document.querySelector("select[name=ChildFreeTicket] option:checked").text;
+                text1 = "어린이 자유이용권 " + a + " 매";
+                document.getElementById("demo5").innerHTML = text1;
+                }
+            }
+
+            function option6() 
+            {
+                if (document.querySelector("select[name=AdultFreeTicket] option:checked").value == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                a = document.querySelector("select[name=AdultFreeTicket] option:checked").text;
+                text1 = "어른 자유이용권 " + a + " 매";
+                document.getElementById("demo6").innerHTML = text1;
+                }
+            }
+
+            function option7() 
+            {
+                if (document.querySelector("select[name=ChildYearTicket] option:checked").value == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                a = document.querySelector("select[name=ChildYearTicket] option:checked").text;
+                text1 = "어린이 연간이용권 " + a + " 매";
+                document.getElementById("demo7").innerHTML = text1;
+                }
+            }
+
+            function option8() 
+            {
+                if (document.querySelector("select[name=AdultYearTicket] option:checked").value == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                a = document.querySelector("select[name=AdultYearTicket] option:checked").text;
+                text1 = "어른 연간이용권 " + a + " 매";
+                document.getElementById("demo8").innerHTML = text1;
+                }   
+            }
+
+
+            // 가격의 합을 구하는 함수 ---------------------------------------------------------------------------------------------------------------------
+            function sum()
+            {
+                var sum = 0;
+                a = document.querySelector("select[name=ChildEnterence] option:checked").value * 7000;
+                b = document.querySelector("select[name=AdultEnterence] option:checked").value * 10000;
+                c = document.querySelector("select[name=ChildBIG3] option:checked").value * 12000;
+                d = document.querySelector("select[name=AdultBIG3] option:checked").value * 16000;
+                e = document.querySelector("select[name=ChildFreeTicket] option:checked").value * 21000;
+                f = document.querySelector("select[name=AdultFreeTicket] option:checked").value * 26000;
+                g = document.querySelector("select[name=ChildYearTicket] option:checked").value * 70000;
+                h = document.querySelector("select[name=AdultYearTicket] option:checked").value * 90000;
+
+                sum = a + b + c + d + e + f + g + h;
+
+                text1 = "합계 " + sum + " 원입니다.";
+                document.getElementById("demo9").innerHTML = text1;
+            }
+        </script>
+
+        <style>
+            .input-wrap {
+            width: 960px;
+            margin: 0 auto;
+            }
+            
+            h1 { text-align: center; }
+            
+            th, td { text-align: center; }
+            
+            table {
+                border: 1px solid #000;
+                margin: 0 auto;
+            }
+            
+            td, th {
+                border: 1px solid #ccc;
+            }
+            
+            a {text-decoration: none; }
+
+            p {text-align : center;}
+        </style>
+    </head>
+
+    <body>
+        <div class="input-wrap">
+            <form action="과제.html" method="POST">
+
+        <!-- 이름을 출력 -->
+        고객성명 : <input type = "text" id = "input_1">
+
+        <!-- 옵션 박스를 출력 -->
+        <table>
+            <thead>
+                <tr>
+                    <th> NO </th>
+                    <th width = 150px> 구분 </th>
+                    <th colspan = "2" width = 150px> 어린이 </th>
+                    <th colspan = "2" width = 150px> 어른 </th>
+                    <th width = 150px> 비고 </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- ChildEnterence-->
+                <tr>
+                    <td> 1 </td>
+                    <td> 입장권 </td>
+                    <td> 7,000</td>
+                    <td> 
+                        <select name="ChildEnterence">
+                            <option value="0" selected> 0 </option>
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                        </select>
+                    </td>
+
+                    <!-- AdultEnterence -->
+                    <td> 10,000</td>
+                    <td> 
+                        <select name="AdultEnterence">
+                            <option value="0" selected> 0 </option>
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                        </select>    
+                    </td>
+                    <td> 입장</td>
+                </tr>
+
+                <!-- ChildBIG3 -->
+                <tr>
+                    <td> 2 </td>
+                    <td> BIG3 </td>
+                    <td> 12,000</td>
+                    <td> 
+                        <select name="ChildBIG3">
+                            <option value="0" selected> 0 </option>
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                        </select>      
+                    </td>
+
+                    <!-- AdultBIG3 -->
+                    <td> 16,000</td>
+                    <td>
+                        <select name="AdultBIG3">
+                            <option value="0" selected> 0 </option>
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                        </select>  
+                    </td>
+                    <td> 입장+놀이3종</td>
+                </tr>
+
+                <!-- ChildFreeTicket -->
+                <tr>
+                    <td> 3 </td>
+                    <td> 자유이용권 </td>
+                    <td> 21,000</td>
+                    <td>
+                        <select name="ChildFreeTicket">
+                            <option value="0" selected> 0 </option>
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                        </select>  
+                    </td>
+
+                    <!-- AdultFreeTicket -->
+                    <td> 26,000</td>
+                    <td>
+                        <select name="AdultFreeTicket">
+                            <option value="0" selected> 0 </option>
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                        </select>  
+                    </td>
+                    <td> 입장+놀이자유</td>
+                </tr>
+
+                <!-- ChildYearTicket -->
+                <tr>
+                    <td> 4 </td>
+                    <td> 연간이용권 </td>
+                    <td> 7,0000 </td>
+                    <td>
+                        <select name="ChildYearTicket">
+                            <option value="0" selected> 0 </option>
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                        </select>  
+                    </td>
+
+                    <!-- AdultYearTicket --> 
+                    <td> 90,000 </td>
+                    <td>
+                        <select name="AdultYearTicket">
+                            <option value="0" selected> 0 </option>
+                            <option value="1"> 1 </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                        </select>  
+                    </td>
+                    <td> 입장+놀이자유</td>
+                </tr>
+            </tbody>
+        </table>
+
+            <button type = "button" onclick = 
+            "myFunction(), option1(), option2(), option3(), option4(), option5(), option6(), option7(), option8(), sum()"> Submit
+            </button>
+            </form>
+        </div>
+        <!-- 시간을 출력 -->
+        <script> document.write(Date()); </script>
+
+        <!-- 출력을 합니다. -->
+        <p id = "demo"> </p>
+        <p id = "demo1"> </p>
+        <p id = "demo2"> </p>
+        <p id = "demo3"> </p>
+        <p id = "demo4"> </p>
+        <p id = "demo5"> </p>
+        <p id = "demo6"> </p>
+        <p id = "demo7"> </p>
+        <p id = "demo8"> </p>
+        <p id = "demo9"> </p>
+
+    </body>
+</html>
